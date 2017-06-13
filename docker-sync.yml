@@ -1,0 +1,14 @@
+version: "2"
+
+options:
+  verbose: false
+  compose-file-path: 'docker-compose.mac.yml'
+
+syncs:
+  php-bobcat-sync:
+    notify_terminal: true
+    src: './src'
+    dest: '/var/www/html'
+    sync_excludes: ['.*/.git', '.*/node_modules', '.*/bower_components', '.*/sass-cache', '.*/.sass-cache', '.coffee', '.scss', '.sass', '.gitignore']
+    watch_in_container: true
+    watch_excludes: ['.*/.git', '.*/node_modules', '.*/bower_components', '.*/sass-cache', '.*/.sass-cache', '.coffee', '.scss', '.sass', '.gitignore']

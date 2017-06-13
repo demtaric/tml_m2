@@ -1,0 +1,54 @@
+{
+  "name": "tmpl/m2",
+  "description": "Template for M2 (Community Edition)",
+  "type": "project",
+  "license": [
+    "proprietary"
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://repo.magento.com/"
+    }
+  ],
+  "require": {
+    "behat/behat": "^3.1",
+    "behat/mink": "^1.7",
+    "behat/mink-browserkit-driver": "^1.3",
+    "behat/mink-extension": "^2.2",
+    "behat/mink-goutte-driver": "^1.2",
+    "behat/mink-selenium2-driver": "^1.3",
+    "behat/mink-zombie-driver": "^1.4",
+    "emuse/behat-html-formatter": "0.1.*",
+    "magento/product-community-edition": "^2.1",
+    "splendidinternet/mage2-locale-de-de": "^1.13",
+    "squizlabs/php_codesniffer": "1.5.3",
+    "phpunit/phpunit": "4.1.*"
+  },
+  "require-dev": {
+    "flagbit/git-hooks": "^1.0"
+  },
+  "config": {
+    "use-include-path": true,
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Magento\\Framework\\": "lib/internal/Magento/Framework/",
+      "Magento\\Setup\\": "setup/src/Magento/Setup/",
+      "Magento\\": "app/code/Magento/"
+    },
+    "psr-0": {
+      "": "app/code/"
+    },
+    "files": [
+      "app/etc/NonComposerComponentRegistration.php"
+    ]
+  },
+  "minimum-stability": "alpha",
+  "prefer-stable": true,
+  "extra": {
+    "magento-force": "override",
+    "git-root-dir": ".."
+  }
+}
